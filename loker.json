@@ -1,0 +1,23 @@
+[
+    {
+    "_id": {
+        "$oid": "6197cf686d91314f1d8b3e92"
+    },
+	"id_pemilik": {
+        "$oid": "6197cc946d91314f1d8b3e71"
+    },
+	"jenis_loker": "Kompetisi",
+	"type": "Dosen",
+	"judul_loker": "Pembimbing PKM Jurusan Teknik Informatika",
+	"deskripsi_loker": "Dibutuhkan pembimbing PKM dari dosen jurusan Teknik Informatika, ide yang akan dibuat yaitu berupa absensi mahasiswa menggunakan RFID berbasis website",
+	"requirement" : {
+		"jurusan" : "Teknik Informatika",
+		"semester" : "4",
+		"keahlian": ["Ngoding","Design"],
+		"pengalaman" : null
+	},
+	"tgl_berakhir": "28 Mei 2021, 12.32",
+	"tgl_mengajukan": "5 Juni 2021, 00.00",
+	"status": false
+	}
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "_id": {
+            "$oid": "6197cc946d91314f1d8b3e71"
+        },  
+        "nomor_induk": "191524009",
+        "type": "Mahasiswa",
+        "email": "gemintang.sangkaji.tif419@polban.ac.id",
+        "password": 123456,
+        "nama": "Gemintang Sangkaji Furqon",
+        "alamat": "Jl. Baranang Siang No.234/34B",
+        "prodi": "D4 Teknik Informatika",
+        "no_tlp": "082118397901",
+        "gender": "Laki-laki",
+        "status": false
+    },
+    {
+        "_id": {
+            "$oid": "6197cc946d91314f1d8b3e72"
+        },  
+        "nomor_induk": "191524023",
+        "type": "Mahasiswa",
+        "email": "mochamad.nauval.tif419@polban.ac.id",
+        "password": 123456,
+        "nama": "Mochamad Nauval Dwisatya",
+        "alamat": "Jl. Rancamanyar",
+        "prodi": "D4 Teknik Informatika",
+        "no_tlp": "081212342345",
+        "gender": "Laki-laki",
+        "status": false
+    },
+    {
+        "_id": {
+            "$oid": "6197cc946d91314f1d8b3e73"
+        },  
+        "nomor_induk": "191524029",
+        "type": "Mahasiswa",
+        "email": "muhammad.rafi.tif419@polban.ac.id",
+        "password": 123456,
+        "nama": "Muhammad Rafi Kamil",
+        "alamat": "Jl. Mochamad Ramdan",
+        "prodi": "D4 Teknik Informatika",
+        "no_tlp": "081298763456",
+        "gender": "Laki-laki",
+        "status": false
+    }
+]

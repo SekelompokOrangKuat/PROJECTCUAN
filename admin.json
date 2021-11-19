@@ -1,0 +1,12 @@
+[
+    {
+    "_id": {
+        "$oid": "6197cf686d91314f1d8b3e91"
+    },
+    "email": "admin.loker@polban.ac.id",
+	"password": 123456,
+	"nama": "Admin Loker",
+	"alamat": "Jalan Ciwaruga",
+	"no_tlp": "081321321321"
+    }
+]

@@ -1,0 +1,17 @@
+[{
+	"id_pelamar": {
+        "$oid": "6197cc946d91314f1d8b3e72"
+    }, 
+	"id_loker": {
+        "$oid": "6197cf686d91314f1d8b3e92"
+    },
+	"id_user": {
+        "$oid": "6197cc946d91314f1d8b3e71"
+    },
+    "experience" : {
+		"keahlian": ["Ngoding","Design"],
+		"pengalaman" : "Magang Bukalapak selama 6 bulan"
+	},
+	"alasan_melamar": "Menambah pengalaman",
+	"status": false
+}]
