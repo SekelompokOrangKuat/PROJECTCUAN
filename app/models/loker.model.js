@@ -1,10 +1,4 @@
 module.exports = mongoose => {
-    // var childSchema = mongoose.Schema({
-    //     jurusan: String,
-    //     keahlian: [String],
-    //     pengalaman: [String]
-    // },   {timestamps: true});
-
     var parentSchema = mongoose.Schema({
         jenis_loker: String,
         type: String,
@@ -13,8 +7,7 @@ module.exports = mongoose => {
         tgl_berakhir: Date,
         tgl_mengajukan: Date,
         status: Boolean,
-        // children: [childSchema]
-        requirement: [{jurusan:String, keahlian:[String], pengalaman:[String]}]
+        requirement: [{ jurusan: String, keahlian: [String], pengalaman: [String] }]
 
     }, { timestamps: true });
 
