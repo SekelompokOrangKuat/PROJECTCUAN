@@ -1,7 +1,10 @@
 module.exports = mongoose => {
     var schema = mongoose.Schema({
         nomor_induk: String,
-        type: String,
+        roles: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Role"
+        }],
         email: String,
         password: String,
         nama: String,
@@ -9,8 +12,7 @@ module.exports = mongoose => {
         alamat: String,
         prodi: String,
         no_tlp: String,
-        gender: String,
-        status: Boolean
+        gender: String
     }, { timestamps: true });
 
     schema.method("toJSON", function() {
