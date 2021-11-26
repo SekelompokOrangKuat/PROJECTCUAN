@@ -27,14 +27,15 @@ db.mongoose
 app.use(bodyParser.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended:true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to my first project."});
+    res.json({ message: "Welcome to my first project." });
 });
 
-require("./app/ruotes/sample.routes")(app);
+require("./app/ruotes/sample.routes")(app),
+    require("./app/ruotes/admin.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
