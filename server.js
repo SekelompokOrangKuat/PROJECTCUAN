@@ -13,7 +13,7 @@ app.use(cors(corsOptions));
 const db = require("./app/models");
 db.mongoose
     .connect(db.url, {
-        usenewUrlParser: true,
+        useNewUrlParser: true,
         useUnifiedTopology: true
     })
     .then(() => {
@@ -23,7 +23,8 @@ db.mongoose
         console.log("[INFO] Cannot connect to the database!", err);
         process.exit();
     });
-// parse requests of content-type - application/json
+
+
 app.use(bodyParser.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
