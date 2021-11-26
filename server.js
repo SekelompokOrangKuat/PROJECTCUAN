@@ -34,8 +34,9 @@ app.get("/", (req, res) => {
     res.json({ message: "Welcome to my first project." });
 });
 
-require("./app/ruotes/sample.routes")(app),
-    require("./app/ruotes/admin.routes")(app);
+require("./app/ruotes/sample.routes")(app);
+require("./app/ruotes/admin.routes")(app);
+require("./app/ruotes/user.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

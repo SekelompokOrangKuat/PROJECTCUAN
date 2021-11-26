@@ -9,9 +9,6 @@ module.exports = app => {
     // Retrieve all samples
     router.get("/", admin.findAll);
 
-    // Retrieveall published samples
-    router.get("/published", admin.findAllPublished);
-
     // Retrieve a single sample with id
     router.get("/:id", admin.findOne);
 

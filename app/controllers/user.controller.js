@@ -1,70 +1,76 @@
 const db = require("../models");
-const Admin = db.admins;
+const User = db.users;
 
-// Create and save a new admin
+// Create and save a new user
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.email) {
-        res.status(400).send({ message: "Email can not be empty!" });
+    if (!req.body.nomor_induk) {
+        res.status(400).send({ message: "Nomor Induk can not be empty!" });
         return;
     }
 
-    // Create a admin
-    const admin = new Admin({
+    // Create a user
+    const user = new Users({
+        nomor_induk: req.body.nomor_induk,
+        type: req.body.type,
         email: req.body.email,
         password: req.body.password,
         nama: req.body.nama,
+        tgl_lahir: req.body.tgl_lahir,
         alamat: req.body.alamat,
-        no_tlp: req.body.no_tlp
+        prodi: req.body.prodi,
+        no_tlp: req.body.no_tlp,
+        gender: req.body.gender,
+        status: req.body.status
     });
 
-    // Save admin in the database
-    admin
-        .save(admin)
+    // Save user in the database
+    user
+        .save(user)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while creating Admin."
+                message: err.message || "Some error occurred while creating User."
             });
         });
 };
 
-// Retrieve all admin from the database.
+// Retrieve all user from the database.
 exports.findAll = (req, res) => {
     const email = req.query.email;
     var condition = email ? { email: { $regex: new RegExp(email), $options: "i" } } : {};
 
-    Admin.find(condition)
+    User.find(condition)
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred whild retrieving admin."
+                message: err.message || "Some error occurred while retrieving user."
             });
         });
 };
 
-// Find a single sample with an id
+// Find a single user with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Admin.findById(id)
+    User.findById(id)
         .then(data => {
             if (!data)
-                res.status(404).send({ message: "Not found admin with id " + id });
+                res.status(404).send({ message: "Not found user with id " + id });
             else res.send(data);
         })
         .catch(err => {
             res
                 .status(500)
-                .send({ message: "Error retrieving admin with id=" + id });
+                .send({ message: "Error retrieving user with id=" + id });
         });
 };
 
-// Update a sample by the id in the request
+// Update a user by the id in the request
 exports.update = (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -74,55 +80,55 @@ exports.update = (req, res) => {
 
     const id = req.params.id;
 
-    Admin.findByIdAndUpdate(id, req.body, { useFindAndMody: false })
+    User.findByIdAndUpdate(id, req.body, { useFindAndMody: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot update admin with id=${id}. Maybe admin was not found.`
+                    message: `Cannot update user with id=${id}. Maybe user was not found.`
                 });
-            } else res.send({ message: "admin was updated successfully." });
+            } else res.send({ message: "user was updated successfully." });
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating admin with id=" + id
+                message: "Error updating user with id=" + id
             });
         });
 };
 
-// Delete a sample with the specified id in teh request
+// Delete a user with the specified id in teh request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Admin.findByIdAndRemove(id)
+    User.findByIdAndRemove(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot delete admin with id=${id}. Maybe admin was not found!`
+                    message: `Cannot delete user with id=${id}. Maybe user was not found!`
                 });
             } else {
                 res.send({
-                    message: "admin was deleted successfully!"
+                    message: "user was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete admin with id=" + id
+                message: "Could not delete user with id=" + id
             });
         });
 };
 
-// Delete all samples from the database.
+// Delete all user from the database.
 exports.deleteAll = (req, res) => {
-    Admin.deleteMany({})
+    User.deleteMany({})
         .then(data => {
             res.send({
-                message: `${data.deletedCount} admins were deleted successfully!`
+                message: `${data.deletedCount} users were deleted successfully!`
             });
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occurred while removing all admin."
+                message: err.message || "Some error occurred while removing all user."
             });
         });
 };
