@@ -1,3 +1,3 @@
 module.exports = {
-    url: "mongodb://localhost:27017/sok_db"
+    url: "mongodb+srv://projectIntention:projectIntention01@clusterpi.bfvjf.mongodb.net/projectIntention?retryWrites=true&w=majority"
 }
