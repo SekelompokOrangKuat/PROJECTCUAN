@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 require("./app/ruotes/sample.routes")(app);
 require("./app/ruotes/admin.routes")(app);
 require("./app/ruotes/user.routes")(app);
-
+require("./app/ruotes/loker.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
