@@ -41,8 +41,8 @@ app.get("/", (req, res) => {
 require("./app/ruotes/sample.routes")(app);
 require("./app/ruotes/admin.routes")(app);
 require("./app/ruotes/user.routes")(app);
-<<<<<<< HEAD
 require("./app/ruotes/auth.routes")(app);
+require("./app/ruotes/loker.routes")(app);
 
 function initial() {
     Role.estimatedDocumentCount((err, count) => {
@@ -80,9 +80,6 @@ function initial() {
     });
 }
 
-=======
-require("./app/ruotes/loker.routes")(app);
->>>>>>> a4441fcc1b4dd2ebdeebc977ddf7237de24ed3f2
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
