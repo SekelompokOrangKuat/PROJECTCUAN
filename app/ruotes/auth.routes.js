@@ -1,3 +1,7 @@
+// NOTE update!!!
+// - Tambahin get all data 
+// - Tambahin ROLE!
+
 module.exports = app => {
     const { verifySignUp } = require("../middlewares");
     const controller = require("../controllers/auth.controller");

@@ -23,7 +23,7 @@ exports.create = (req, res) => {
     }
 
     // Create a user
-    const user = new Users({
+    const user = new User({
         nomor_induk: req.body.nomor_induk,
         type: req.body.type,
         email: req.body.email,
