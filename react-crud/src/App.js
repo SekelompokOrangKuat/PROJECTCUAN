@@ -5,13 +5,14 @@ import {Switch, Route, Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SamplesList from './components/samples-list.component';
 import Sample from './components/sample.component';
-import AddSample from './components/add-sample.component';
+import RegisterUser from './components/register-user.component';
+import LoginUser from './components/login-user.component';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
           <a href="/samples" className="navbar-brand">
             Project Intension
           </a>
@@ -27,12 +28,13 @@ class App extends Component {
               </Link>
             </li>
           </div>
-        </nav>
+        </nav> */}
 
         <div className="container mt-3">
           <Switch>
             <Route exact path={["/", "/samples"]} component={SamplesList} />
-            <Route exact path="/add" component={AddSample} />
+            <Route exact path="/sign-up" component={RegisterUser} />
+            <Route exact path="/login" component={LoginUser} />
             <Route path="/samples/:id" component={Sample} />
           </Switch>
         </div>
