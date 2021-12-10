@@ -10,12 +10,12 @@ exports.signup = (req, res) => {
     const user = new User({
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 8),
-        nama: req.body.nama,
-        tgl_lahir: req.body.tgl_lahir,
-        alamat: req.body.alamat,
+        nama: req.body.nim,
+        tgl_lahir: req.body.birthdate,
+        alamat: req.body.address,
         prodi: req.body.prodi,
-        no_tlp: req.body.no_tlp,
-        gender: req.body.gender,
+        no_tlp: req.body.phonenumber,
+        gender: req.body.sex,
     });
 
     user.save((err, user) => {
@@ -97,6 +97,8 @@ exports.signin = (req, res) => {
                 expiresIn: 86400 // 24 hours
             });
 
+            res.cookie('jwt', token)
+
             var authorities = [];
 
             for (let i = 0; i < user.roles.length; i++) {
@@ -106,7 +108,7 @@ exports.signin = (req, res) => {
                 id: user.id,
                 email: user.email,
                 roles: authorities,
-                accessToken: token
+                accessToken: token,
             });
         });
 };
